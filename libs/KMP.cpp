@@ -29,7 +29,7 @@ int64_t KMP<T>::find(const T *target, const int64_t &target_size){
   int64_t i = 0, j = 0;
   for(; i < this->data_size; i++){
     while(this->data[i] != target[j] && j > 0){
-      j = this->failure[j];
+      j = this->failure[j - 1];
     }
     if(this->data[i] == target[j]){
       j++;
